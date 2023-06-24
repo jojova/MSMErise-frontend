@@ -50,7 +50,7 @@ function Doc() {
               <Card>
                 <CardHeader
                   variant="gradient"
-                  color="blue"
+                  color="green"
                   className="mb-8 p-6"
                   onClick={handleToggle}
                   style={{ cursor: "pointer" }}
