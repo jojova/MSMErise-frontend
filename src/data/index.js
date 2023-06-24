@@ -9,3 +9,4 @@ export * from "@/data/authors-table-data";
 export * from "@/data/crowdfunding-data";
 export * from "@/data/investment-data";
 export * from "@/data/started-data";
+export * from "@/data/guide-data";
