@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Card, CardHeader, Typography } from "@material-tailwind/react";
 
 import { mdiChevronDown, mdiChevronUp } from "@mdi/js";
-import Handicraft from "./guide/handicraft";
-import Travel from "./guide/Travel";
-import Spices from "./guide/Spices";
-import Agro from "./guide/Agro";
-import Coir from "./guide/Coir";
-import Fisheries from "./guide/Fisheries and Seafood Processing";
-import Health from "./guide/Health";
-import Rubber from "./guide/Rubber";
-import ItandT from "./guide/IT and Software Services";
+// import Handicraft from "./guide/handicraft";
+// import Travel from "./guide/Travel";
+// import Spices from "./guide/Spices";
+// import Agro from "./guide/Agro";
+// import Coir from "./guide/Coir";
+// import Fisheries from "./guide/Fisheries and Seafood Processing";
+// import Health from "./guide/Health";
+// import Rubber from "./guide/Rubber";
+// import ItandT from "./guide/IT and Software Services";
 import { Input } from "@material-tailwind/react";
 import { guideData } from "@/data";
 
@@ -74,12 +74,12 @@ function Doc() {
       {/* <Handicraft />
       <Travel /> */}
       {/* <Spices /> */}
-      <Agro />
+      {/* <Agro />
       <Coir />
       <Fisheries />
       <Health />
       <Rubber />
-      <ItandT />
+      <ItandT /> */}
     </div>
   );
 }
