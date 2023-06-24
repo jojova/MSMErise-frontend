@@ -15,6 +15,7 @@ import {
   Tables,
   Notifications,
   CrowdFunding,
+  AssetManagement,
 } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 import Doc from "./pages/dashboard/doc";
@@ -63,6 +64,12 @@ export const routes = [
         name: "Help Guide",
         path: "/guide",
         element: <Doc />,
+      },
+      {
+        icon: <DocumentTextIcon {...icon} />,
+        name: "Asset Management",
+        path: "/asset-management",
+        element: <AssetManagement />,
       },
       // {
       //   icon: <BellIcon {...icon} />,
