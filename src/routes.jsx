@@ -7,6 +7,7 @@ import {
   UserPlusIcon,
   DocumentTextIcon,
   CurrencyRupeeIcon,
+  ShoppingBagIcon,
 } from "@heroicons/react/24/solid";
 import {
   Home,
@@ -17,6 +18,7 @@ import {
 } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 import Doc from "./pages/dashboard/doc";
+import Portfolio from "./pages/dashboard/portfolio";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -37,6 +39,12 @@ export const routes = [
         name: "profile",
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        icon: <ShoppingBagIcon {...icon} />,
+        name: "Portfolio",
+        path: "/portfolio",
+        element: <Portfolio />,
       },
       {
         icon: <CurrencyRupeeIcon {...icon} />,

@@ -7,3 +7,5 @@ export * from "@/data/conversations-data";
 export * from "@/data/projects-data";
 export * from "@/data/authors-table-data";
 export * from "@/data/crowdfunding-data";
+export * from "@/data/investment-data";
+export * from "@/data/started-data";

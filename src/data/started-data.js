@@ -1,0 +1,40 @@
+export const startedData = [
+  {
+    img: "/img/catalystx.png",
+    name: "CatalystX",
+    sector: "Hardware",
+    projectName: "Marketing",
+    email: "hello@catalystx.io",
+    job: ["Debt", ""],
+    online: true,
+    date: "11/01/23",
+    budget: "$4500",
+    completion: 70,
+  },
+  {
+    img: "/img/catalystx.png",
+    name: "CatalystX",
+    sector: "Hardware",
+    projectName: "Research",
+    email: "hello@catalystx.io",
+    job: ["Equity", ""],
+    online: true,
+    date: "11/01/23",
+    budget: "$4500",
+    completion: 80,
+  },
+  {
+    img: "/img/catalystx.png",
+    name: "CatalystX",
+    sector: "Hardware",
+    projectName: "Scaling",
+    email: "hello@catalystx.io",
+    job: ["Equity", ""],
+    online: false,
+    date: "11/01/23",
+    budget: "$4500",
+    completion: 100,
+  },
+];
+
+export default startedData;
