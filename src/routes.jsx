@@ -8,6 +8,7 @@ import {
   DocumentTextIcon,
   CurrencyRupeeIcon,
   ShoppingBagIcon,
+  ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/solid";
 import {
   Home,
@@ -80,15 +81,30 @@ export const routes = [
     ],
   },
   {
-    title: "auth pages",
+    // title: "auth pages",
+    title: <hr />,
     layout: "auth",
     pages: [
       {
-        icon: <ArrowRightOnRectangleIcon {...icon} />,
-        name: "sign in",
+        icon: <ArrowLeftOnRectangleIcon {...icon} />,
+        name: "log out",
         path: "/sign-in",
         element: <SignIn />,
       },
+      // {
+      //   icon: <UserPlusIcon {...icon} />,
+      //   name: "sign up",
+      //   path: "/sign-up",
+      //   element: <SignUp />,
+      // },
+    ],
+  },
+];
+
+export const signUpRoute = [
+  {
+    layout: "auth",
+    pages: [
       {
         icon: <UserPlusIcon {...icon} />,
         name: "sign up",

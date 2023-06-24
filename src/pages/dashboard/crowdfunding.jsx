@@ -22,7 +22,7 @@ export function CrowdFunding() {
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <div>
-        <Button>Start a project</Button>
+        <Button color="green">Start a project</Button>
       </div>
       <div>
         <Card>
