@@ -26,7 +26,7 @@ export function CrowdFunding() {
       </div>
       <div>
         <Card>
-          <CardHeader variant="gradient" color="blue" className="mb-8 p-6">
+          <CardHeader variant="gradient" color="green" className="mb-8 p-6">
             <Typography variant="h6" color="white">
               All Projects
             </Typography>

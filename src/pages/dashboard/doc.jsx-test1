@@ -12,7 +12,7 @@ const HandicraftsCard = () => {
 
   return (
     <Card>
-      <CardHeader color="blue" className="mb-8 p-6" onClick={handleExpand}>
+      <CardHeader color="green" className="mb-8 p-6" onClick={handleExpand}>
         <Typography color="white" size="lg" font-weight="bold">
           Handicrafts and Artisans
         </Typography>
