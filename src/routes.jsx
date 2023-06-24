@@ -5,9 +5,11 @@ import {
   BellIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
+  DocumentTextIcon
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
+import Doc from "./pages/dashboard/doc";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -34,6 +36,12 @@ export const routes = [
         name: "tables",
         path: "/tables",
         element: <Tables />,
+      },
+      {
+        icon: <DocumentTextIcon {...icon} />,
+        name: "Help Guide",
+        path: "/guide",
+        element: <Doc />,
       },
       {
         icon: <BellIcon {...icon} />,
