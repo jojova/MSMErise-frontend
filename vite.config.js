@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     overlay: true,
     watch: {
-      usePolling: true
-    }
-  }
+      usePolling: true,
+    },
+  },
 });

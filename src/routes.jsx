@@ -5,9 +5,16 @@ import {
   BellIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
-  DocumentTextIcon
+  DocumentTextIcon,
+  CurrencyRupeeIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import {
+  Home,
+  Profile,
+  Tables,
+  Notifications,
+  CrowdFunding,
+} from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 import Doc from "./pages/dashboard/doc";
 
@@ -30,6 +37,12 @@ export const routes = [
         name: "profile",
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        icon: <CurrencyRupeeIcon {...icon} />,
+        name: "Crowd Funding",
+        path: "/crowdfunding",
+        element: <CrowdFunding />,
       },
       {
         icon: <TableCellsIcon {...icon} />,
