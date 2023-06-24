@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -9,8 +10,45 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
+import { signUpUser } from "../../services/userService";
 
 export function SignUp() {
+  const [userData, setUserData] = useState({
+    userName: "",
+    userEmail: "",
+    userPassword: "",
+    userType: ["msme"], // Default value
+  });
+
+  const [investorChecked, setInvestorChecked] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    setInvestorChecked(e.target.checked);
+    setUserData((prevState) => ({
+      ...prevState,
+      userType: e.target.checked ? ["msme", "investor"] : ["msme"],
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const createdUser = await signUpUser(userData); // Call your API service function
+      console.log("Created user:", createdUser);
+      // Handle the created user data as needed
+    } catch (error) {
+      console.error("Error signing up user:", error);
+      // Handle the error as needed
+    }
+  };
   return (
     <>
       <img
@@ -29,14 +67,39 @@ export function SignUp() {
               Sign Up
             </Typography>
           </CardHeader>
-          <CardBody className="flex flex-col gap-4">
-            <Input label="Name" size="lg" />
-            <Input type="email" label="Email" size="lg" />
-            <Input type="password" label="Password" size="lg" />
-            <div className="-ml-2.5">
-              <Checkbox label="I agree the Terms and Conditions" />
-            </div>
-          </CardBody>
+          <form onSubmit={handleSubmit}>
+            <CardBody className="flex flex-col gap-4">
+              <Input
+                type="text"
+                name="userName"
+                value={userData.userName}
+                onChange={handleChange}
+                label="Name"
+                size="lg"
+              />
+              <Input
+                type="email"
+                name="userEmail"
+                value={userData.userEmail}
+                onChange={handleChange}
+                label="Email"
+                size="lg"
+              />
+              <Input
+                type="password"
+                name="userPassword"
+                value={userData.userPassword}
+                onChange={handleChange}
+                label="Password"
+                size="lg"
+              />
+              <Checkbox
+                label="I am an Investor"
+                checked={investorChecked}
+                onChange={handleCheckboxChange}
+              />
+            </CardBody>
+          </form>
           <CardFooter className="pt-0">
             <Button variant="gradient" color="green" fullWidth>
               Sign Up
