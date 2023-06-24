@@ -7,6 +7,8 @@ export const crowdfundingData = [
     job: ["Equity", ""],
     online: true,
     date: "23/04/23",
+    budget: "$12000",
+    completion: 90,
   },
   {
     img: "/img/launchlabs.jpg",
@@ -16,6 +18,8 @@ export const crowdfundingData = [
     job: ["Debt", ""],
     online: false,
     date: "12/03/23",
+    budget: "$8000",
+    completion: 60,
   },
   {
     img: "/img/catalystx.png",
@@ -25,6 +29,8 @@ export const crowdfundingData = [
     job: ["Debt", ""],
     online: true,
     date: "11/01/23",
+    budget: "$4500",
+    completion: 70,
   },
   {
     img: "/img/ignitewave.png",
@@ -34,6 +40,8 @@ export const crowdfundingData = [
     job: ["Equity", ""],
     online: false,
     date: "08/02/23",
+    budget: "$7500",
+    completion: 100,
   },
   {
     img: "/img/venturenexus.jpg",
@@ -43,6 +51,8 @@ export const crowdfundingData = [
     job: ["Debt", ""],
     online: true,
     date: "13/04/23",
+    budget: "$3000",
+    completion: 80,
   },
 ];
 
