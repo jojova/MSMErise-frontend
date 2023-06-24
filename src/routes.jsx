@@ -5,6 +5,7 @@ import {
   BellIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
+  CurrencyRupeeIcon,
 } from "@heroicons/react/24/solid";
 import {
   Home,
@@ -36,8 +37,8 @@ export const routes = [
         element: <Profile />,
       },
       {
-        icon: <TableCellsIcon {...icon} />,
-        name: "crowdfunding",
+        icon: <CurrencyRupeeIcon {...icon} />,
+        name: "Crowd Funding",
         path: "/crowdfunding",
         element: <CrowdFunding />,
       },

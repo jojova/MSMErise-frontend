@@ -32,6 +32,7 @@ export function CrowdFunding() {
                 <tr>
                   {[
                     "Company Name",
+                    "Sector",
                     "Project",
                     "Type",
                     "status",
@@ -58,6 +59,7 @@ export function CrowdFunding() {
                     {
                       img,
                       name,
+                      sector,
                       projectName,
                       email,
                       job,
@@ -92,6 +94,11 @@ export function CrowdFunding() {
                               </Typography>
                             </div>
                           </div>
+                        </td>
+                        <td className={className}>
+                          <Typography className="text-xs font-semibold text-blue-gray-600">
+                            {sector}
+                          </Typography>
                         </td>
                         <td className={className}>
                           <Typography className="text-xs font-semibold text-blue-gray-600">
