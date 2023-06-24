@@ -2,6 +2,7 @@ export const crowdfundingData = [
   {
     img: "/img/Innovitech.jpg",
     name: "Innovitech",
+    sector: "Coir",
     projectName: "Scaling",
     email: "info@innovitech.com",
     job: ["Equity", ""],
@@ -13,6 +14,7 @@ export const crowdfundingData = [
   {
     img: "/img/launchlabs.jpg",
     name: "LaunchLabs",
+    sector: "IT",
     projectName: "Research",
     email: "contact@launchlabs.io",
     job: ["Debt", ""],
@@ -24,6 +26,7 @@ export const crowdfundingData = [
   {
     img: "/img/catalystx.png",
     name: "CatalystX",
+    sector: "Hardware",
     projectName: "Marketing",
     email: "hello@catalystx.io",
     job: ["Debt", ""],
@@ -35,6 +38,7 @@ export const crowdfundingData = [
   {
     img: "/img/ignitewave.png",
     name: "IgniteWave",
+    sector: "Tourism",
     projectName: "Research",
     email: "info@ignitewave.co",
     job: ["Equity", ""],
@@ -46,6 +50,7 @@ export const crowdfundingData = [
   {
     img: "/img/venturenexus.jpg",
     name: "VentureNexus",
+    sector: "Healthcare",
     projectName: "Scaling",
     email: "info@venturenexus.com",
     job: ["Debt", ""],
