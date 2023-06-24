@@ -6,4 +6,10 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
+  server: {
+    overlay: true,
+    watch: {
+      usePolling: true
+    }
+  }
 });
