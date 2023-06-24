@@ -35,8 +35,8 @@ export function CrowdFunding() {
                     "Project",
                     "Type",
                     "status",
-                    "Date opened",
-                    "",
+                    "Budget",
+                    "Completion",
                   ].map((el) => (
                     <th
                       key={el}
@@ -55,7 +55,17 @@ export function CrowdFunding() {
               <tbody>
                 {crowdfundingData.map(
                   (
-                    { img, name, projectName, email, job, online, date },
+                    {
+                      img,
+                      name,
+                      projectName,
+                      email,
+                      job,
+                      online,
+                      date,
+                      budget,
+                      completion,
+                    },
                     key
                   ) => {
                     const className = `py-3 px-5 ${
@@ -65,7 +75,7 @@ export function CrowdFunding() {
                     }`;
 
                     return (
-                      <tr key={name}>
+                      <tr key={name} className="cursor-pointer">
                         <td className={className}>
                           <div className="flex items-center gap-4">
                             <Avatar src={img} alt={name} size="sm" />
@@ -106,17 +116,24 @@ export function CrowdFunding() {
                         </td>
                         <td className={className}>
                           <Typography className="text-xs font-semibold text-blue-gray-600">
-                            {date}
+                            {budget}
                           </Typography>
                         </td>
                         <td className={className}>
-                          <Typography
-                            as="a"
-                            href="#"
-                            className="text-xs font-semibold text-blue-gray-600"
-                          >
-                            Show interest
-                          </Typography>
+                          <div className="w-10/12">
+                            <Typography
+                              variant="small"
+                              className="mb-1 block text-xs font-medium text-blue-gray-600"
+                            >
+                              {completion}%
+                            </Typography>
+                            <Progress
+                              value={completion}
+                              variant="gradient"
+                              color={completion === 100 ? "green" : "blue"}
+                              className="h-1"
+                            />
+                          </div>
                         </td>
                       </tr>
                     );
