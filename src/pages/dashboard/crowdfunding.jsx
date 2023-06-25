@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { Button } from "@material-tailwind/react";
 import {
   Card,
@@ -11,18 +11,39 @@ import {
   Progress,
 } from "@material-tailwind/react";
 import {
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { Input } from "@material-tailwind/react";
+import {
   Accordion,
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { authorsTableData, projectsTableData, crowdfundingData } from "@/data";
+import StartProjectForm from "@/StartProjectForm";
 
 export function CrowdFunding() {
+  const [open, setOpen] = useState(false);
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <div>
-        <Button color="green">Start a project</Button>
+        <Button color="green" onClick={() => setOpen(true)}>
+          Start a project
+        </Button>
+      </div>
+      <div>
+        <StartProjectForm
+          openModal={open}
+          handleOpenModal={handleOpenModal}
+          setOpenModal={() => setOpen(false)}
+        />
       </div>
       <div>
         <Card>
