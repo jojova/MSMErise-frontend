@@ -101,14 +101,29 @@ export function SignUp() {
                 label="Password"
                 size="lg"
               />
+              <Input type="text" name="MSME ID" label="MSME ID" size="lg" />
+              <input type="file" className="hidden" id="file_upload" />
+              <Button
+                variant="gradient"
+                color="green"
+                fullWidth
+                onClick={(e) => {
+                  e.preventDefault();
+                  const uploadButton = document.querySelector("#file_upload");
+                  uploadButton.click();
+                }}
+              >
+                Upload File (for MSME only)
+              </Button>
+
               <Checkbox
                 label="I am an Investor"
                 checked={investorChecked}
                 onChange={handleCheckboxChange}
               />
               <Button variant="gradient" color="green" fullWidth type="submit">
-              Sign Up
-            </Button>
+                Sign Up
+              </Button>
             </CardBody>
           </form>
           <CardFooter className="pt-0">
