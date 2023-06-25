@@ -17,6 +17,7 @@ import {
   Notifications,
   CrowdFunding,
   AssetManagement,
+  MarketPlace,
 } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 import Doc from "./pages/dashboard/doc";
@@ -77,6 +78,18 @@ export const routes = [
         path: "/asset-management",
         element: <AssetManagement />,
       },
+      {
+        icon: <DocumentTextIcon {...icon} />,
+        name: "Marketplace",
+        path: "/marketplace",
+        element: <MarketPlace />,
+      },
+      // {
+      //   icon: <BellIcon {...icon} />,
+      //   name: "notifactions",
+      //   path: "/notifactions",
+      //   element: <Notifications />,
+      // },
     ],
   },
 ];
