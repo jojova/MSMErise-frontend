@@ -76,7 +76,7 @@ export function Home() {
           >
             <div>
               <Typography variant="h6" color="blue-gray" className="mb-1">
-                Projects
+                Projects you may be interested
               </Typography>
               <Typography
                 variant="small"
@@ -107,21 +107,19 @@ export function Home() {
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
-                  {["companies", "members", "budget", "completion"].map(
-                    (el) => (
-                      <th
-                        key={el}
-                        className="border-b border-blue-gray-50 py-3 px-6 text-left"
+                  {["companies", "budget", "completion"].map((el) => (
+                    <th
+                      key={el}
+                      className="border-b border-blue-gray-50 py-3 px-6 text-left"
+                    >
+                      <Typography
+                        variant="small"
+                        className="text-[11px] font-medium uppercase text-blue-gray-400"
                       >
-                        <Typography
-                          variant="small"
-                          className="text-[11px] font-medium uppercase text-blue-gray-400"
-                        >
-                          {el}
-                        </Typography>
-                      </th>
-                    )
-                  )}
+                        {el}
+                      </Typography>
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -147,7 +145,7 @@ export function Home() {
                             </Typography>
                           </div>
                         </td>
-                        <td className={className}>
+                        {/* <td className={className}>
                           {members.map(({ img, name }, key) => (
                             <Tooltip key={name} content={name}>
                               <Avatar
@@ -161,7 +159,7 @@ export function Home() {
                               />
                             </Tooltip>
                           ))}
-                        </td>
+                        </td> */}
                         <td className={className}>
                           <Typography
                             variant="small"
