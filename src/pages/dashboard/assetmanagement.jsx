@@ -48,7 +48,7 @@ export function AssetManagement() {
               <Typography color="gray">{data.description}</Typography>
             </CardBody>
             <CardFooter className="mb-0 mt-auto">
-              <Button size="lg" fullWidth={true}>
+              <Button color="green" size="lg" fullWidth={true}>
                 Add to Marketplace
               </Button>
             </CardFooter>
