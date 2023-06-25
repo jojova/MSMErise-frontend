@@ -15,20 +15,34 @@ export const signUpUser = async (userData) => {
     }
   };
   
-  export const signInUser = async (userEmail, userPassword) => {
+  export async function signInUser(userData) {
     try {
       const response = await fetch('https://msmerise-backend-production.up.railway.app/users/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userEmail, userPassword }),
+        body: JSON.stringify(userData),
       });
-      const user = await response.json();
-      return user;
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        // Authentication successful
+        return {
+          success: true,
+          message: 'Authentication successful!',
+          data: data,
+        };
+      } else {
+        // Authentication failed
+        return {
+          success: false,
+          message: data.error || 'Authentication failed. Please check your credentials.',
+        };
+      }
     } catch (error) {
-      console.error('Error signing in user:', error);
-      throw error;
+      throw new Error('Error signing in user: ' + error.message);
     }
-  };
+  }
   
