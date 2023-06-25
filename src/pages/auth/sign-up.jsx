@@ -117,7 +117,7 @@ export function SignUp() {
               </Button>
 
               <Checkbox
-                label="I am an Investor"
+                label="Registering on behalf of an MSME?"
                 checked={investorChecked}
                 onChange={handleCheckboxChange}
               />
