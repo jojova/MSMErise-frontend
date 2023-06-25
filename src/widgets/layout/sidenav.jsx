@@ -30,7 +30,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
         }`}
       >
         <Link to="/" className="flex items-center gap-4 py-6 px-8">
-          <Avatar src={brandImg} size="sm" />
+          <Avatar src="/img/606195be922d7800118c0349.png" size="sm" />
           <Typography
             variant="h6"
             color={sidenavType === "dark" ? "white" : "blue-gray"}
@@ -99,7 +99,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
 }
 
 Sidenav.defaultProps = {
-  brandImg: "/img/logo-ct.png",
+  brandImg: "/img/606195be922d7800118c0349.png",
   brandName: "MSMErise",
 };
 
