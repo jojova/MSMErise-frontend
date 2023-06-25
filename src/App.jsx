@@ -1,12 +1,23 @@
+import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Dashboard, Auth } from "@/layouts";
+import { Auth, Dashboard } from "@/layouts";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Routes>
-      <Route path="/dashboard/*" element={<Dashboard />} />
-      <Route path="/auth/*" element={<Auth />} />
-      <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
+      {isLoggedIn ? (
+        <>
+          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
+        </>
+      ) : (
+        <>
+          <Route path="/auth/*" element={<Auth />} />
+          <Route path="*" element={<Navigate to="/auth/sign-in" replace />} />
+        </>
+      )}
     </Routes>
   );
 }

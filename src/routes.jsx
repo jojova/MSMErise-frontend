@@ -28,6 +28,23 @@ const icon = {
 
 export const routes = [
   {
+    layout: "auth",
+    pages: [
+      {
+        icon: <ArrowLeftOnRectangleIcon {...icon} />,
+        name: "log in",
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+      {
+        icon: <UserPlusIcon {...icon} />,
+        name: "sign up",
+        path: "/sign-up",
+        element: <SignUp />,
+      },
+    ],
+  },
+  {
     layout: "dashboard",
     pages: [
       {
@@ -36,12 +53,6 @@ export const routes = [
         path: "/home",
         element: <Home />,
       },
-      // {
-      //   icon: <UserCircleIcon {...icon} />,
-      //   name: "profile",
-      //   path: "/profile",
-      //   element: <Profile />,
-      // },
       {
         icon: <ShoppingBagIcon {...icon} />,
         name: "Portfolio",
@@ -54,12 +65,6 @@ export const routes = [
         path: "/crowdfunding",
         element: <CrowdFunding />,
       },
-      // {
-      //   icon: <TableCellsIcon {...icon} />,
-      //   name: "tables",
-      //   path: "/tables",
-      //   element: <Tables />,
-      // },
       {
         icon: <DocumentTextIcon {...icon} />,
         name: "Help Guide",
@@ -72,31 +77,6 @@ export const routes = [
         path: "/asset-management",
         element: <AssetManagement />,
       },
-      // {
-      //   icon: <BellIcon {...icon} />,
-      //   name: "notifactions",
-      //   path: "/notifactions",
-      //   element: <Notifications />,
-      // },
-    ],
-  },
-  {
-    // title: "auth pages",
-    title: <hr />,
-    layout: "auth",
-    pages: [
-      {
-        icon: <ArrowLeftOnRectangleIcon {...icon} />,
-        name: "log out",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      // {
-      //   icon: <UserPlusIcon {...icon} />,
-      //   name: "sign up",
-      //   path: "/sign-up",
-      //   element: <SignUp />,
-      // },
     ],
   },
 ];
