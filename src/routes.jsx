@@ -8,6 +8,7 @@ import {
   DocumentTextIcon,
   CurrencyRupeeIcon,
   ShoppingBagIcon,
+  ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/solid";
 import {
   Home,
@@ -28,6 +29,23 @@ const icon = {
 
 export const routes = [
   {
+    layout: "auth",
+    pages: [
+      {
+        icon: <ArrowLeftOnRectangleIcon {...icon} />,
+        name: "log in",
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+      {
+        icon: <UserPlusIcon {...icon} />,
+        name: "sign up",
+        path: "/sign-up",
+        element: <SignUp />,
+      },
+    ],
+  },
+  {
     layout: "dashboard",
     pages: [
       {
@@ -36,12 +54,6 @@ export const routes = [
         path: "/home",
         element: <Home />,
       },
-      // {
-      //   icon: <UserCircleIcon {...icon} />,
-      //   name: "profile",
-      //   path: "/profile",
-      //   element: <Profile />,
-      // },
       {
         icon: <ShoppingBagIcon {...icon} />,
         name: "Portfolio",
@@ -54,12 +66,6 @@ export const routes = [
         path: "/crowdfunding",
         element: <CrowdFunding />,
       },
-      // {
-      //   icon: <TableCellsIcon {...icon} />,
-      //   name: "tables",
-      //   path: "/tables",
-      //   element: <Tables />,
-      // },
       {
         icon: <DocumentTextIcon {...icon} />,
         name: "Help Guide",
@@ -86,16 +92,12 @@ export const routes = [
       // },
     ],
   },
+];
+
+export const signUpRoute = [
   {
-    title: "auth pages",
     layout: "auth",
     pages: [
-      {
-        icon: <ArrowRightOnRectangleIcon {...icon} />,
-        name: "sign in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
       {
         icon: <UserPlusIcon {...icon} />,
         name: "sign up",

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -13,6 +13,12 @@ import {
 import { signUpUser } from "../../services/userService";
 
 export function SignUp() {
+  const history = useNavigate(); // Access the history object
+
+  useEffect(() => {
+    history("/auth/sign-up"); // Redirect to /auth/sign-up when the component mounts
+  }, [history]);
+
   const [userData, setUserData] = useState({
     userName: "",
     userEmail: "",
@@ -41,14 +47,16 @@ export function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const createdUser = await signUpUser(userData); // Call your API service function
+      const createdUser = await signUpUser(userData);
       console.log("Created user:", createdUser);
-      // Handle the created user data as needed
+      // Redirect to signing page on successful sign up
+      history("/auth/sign-in");
     } catch (error) {
       console.error("Error signing up user:", error);
-      // Handle the error as needed
+      // Handle the error as needed (e.g., show an error message)
     }
   };
+
   return (
     <>
       <img
@@ -98,12 +106,12 @@ export function SignUp() {
                 checked={investorChecked}
                 onChange={handleCheckboxChange}
               />
+              <Button variant="gradient" color="green" fullWidth type="submit">
+              Sign Up
+            </Button>
             </CardBody>
           </form>
           <CardFooter className="pt-0">
-            <Button variant="gradient" color="green" fullWidth>
-              Sign Up
-            </Button>
             <Typography variant="small" className="mt-6 flex justify-center">
               Already have an account?
               <Link to="/auth/sign-in">
