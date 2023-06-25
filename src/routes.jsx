@@ -8,7 +8,9 @@ import {
   DocumentTextIcon,
   CurrencyRupeeIcon,
   ShoppingBagIcon,
+  WalletIcon,
   ArrowLeftOnRectangleIcon,
+  ArrowPathRoundedSquareIcon
 } from "@heroicons/react/24/solid";
 import {
   Home,
@@ -29,23 +31,6 @@ const icon = {
 
 export const routes = [
   {
-    layout: "auth",
-    pages: [
-      {
-        icon: <ArrowLeftOnRectangleIcon {...icon} />,
-        name: "log in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      {
-        icon: <UserPlusIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
-    ],
-  },
-  {
     layout: "dashboard",
     pages: [
       {
@@ -55,7 +40,7 @@ export const routes = [
         element: <Home />,
       },
       {
-        icon: <ShoppingBagIcon {...icon} />,
+        icon: <WalletIcon {...icon} />,
         name: "Portfolio",
         path: "/portfolio",
         element: <Portfolio />,
@@ -73,13 +58,13 @@ export const routes = [
         element: <Doc />,
       },
       {
-        icon: <DocumentTextIcon {...icon} />,
+        icon: <ArrowPathRoundedSquareIcon {...icon} />,
         name: "Asset Management",
         path: "/asset-management",
         element: <AssetManagement />,
       },
       {
-        icon: <DocumentTextIcon {...icon} />,
+        icon: <ShoppingBagIcon {...icon} />,
         name: "Marketplace",
         path: "/marketplace",
         element: <MarketPlace />,
@@ -92,12 +77,29 @@ export const routes = [
       // },
     ],
   },
+  {
+    layout: "auth",
+    pages: [
+      {
+        icon: <ArrowLeftOnRectangleIcon {...icon} />,
+        name: "sign out",
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+    ],
+  },
 ];
 
 export const signUpRoute = [
   {
     layout: "auth",
     pages: [
+      // {
+      //   icon: <ArrowLeftOnRectangleIcon {...icon} />,
+      //   name: "sign out",
+      //   path: "/sign-in",
+      //   element: <SignIn />,
+      // },
       {
         icon: <UserPlusIcon {...icon} />,
         name: "sign up",
