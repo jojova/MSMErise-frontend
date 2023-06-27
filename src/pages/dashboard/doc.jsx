@@ -2,23 +2,18 @@ import React, { useState } from "react";
 import { Card, CardHeader, Typography } from "@material-tailwind/react";
 
 import { mdiChevronDown, mdiChevronUp } from "@mdi/js";
-// import Handicraft from "./guide/handicraft";
-// import Travel from "./guide/Travel";
-// import Spices from "./guide/Spices";
-// import Agro from "./guide/Agro";
-// import Coir from "./guide/Coir";
-// import Fisheries from "./guide/Fisheries and Seafood Processing";
-// import Health from "./guide/Health";
-// import Rubber from "./guide/Rubber";
-// import ItandT from "./guide/IT and Software Services";
 import { Input } from "@material-tailwind/react";
 import { guideData } from "@/data";
 
 function Doc() {
-  const [expanded, setExpanded] = useState(false);
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const handleToggle = () => {
-    setExpanded(!expanded);
+  const handleToggle = (index) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(index);
+    }
   };
   const handleSearchInput = (event) => {
     const newSearchTerm = event.target.value;
@@ -44,22 +39,23 @@ function Doc() {
             a.title.toLowerCase().includes(searchTerm.toLowerCase());
           return searchTermMatch;
         })
-        .map((data) => {
+        .map((data, index) => {
+          const isExpanded = expandedIndex === index;
           return (
-            <div>
+            <div key={index}>
               <Card>
                 <CardHeader
                   variant="gradient"
                   color="green"
                   className="mb-8 p-6"
-                  onClick={handleToggle}
+                  onClick={() => handleToggle(index)}
                   style={{ cursor: "pointer" }}
                 >
                   <Typography variant="h6" color="white">
                     {data.title}
                   </Typography>
                 </CardHeader>
-                {expanded && (
+                {isExpanded && (
                   <div className="p-6">
                     <Typography variant="body1">
                       <h1>{data.heading1}</h1>
@@ -71,15 +67,6 @@ function Doc() {
             </div>
           );
         })}
-      {/* <Handicraft />
-      <Travel /> */}
-      {/* <Spices /> */}
-      {/* <Agro />
-      <Coir />
-      <Fisheries />
-      <Health />
-      <Rubber />
-      <ItandT /> */}
     </div>
   );
 }
